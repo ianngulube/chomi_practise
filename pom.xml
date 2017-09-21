@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework</groupId>
-    <artifactId>chomi_ussd_practise</artifactId>
+    <artifactId>chomi_ussd_practise1</artifactId>
     <version>0.1.0</version>
 
     <packaging>war</packaging>
