@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+    
+    <mvc:annotation-driven />
+    <context:component-scan base-package="com.ian.mvc" />
+    <context:component-scan base-package="com.ian.service.impl" />
+    
+    <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+    
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    </bean>
+    
+    <bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
+        <property name="host" value="localhost" />
+    </bean>
+    
+    <!-- MongoTemplate for connecting and quering the documents in the database -->
+    <bean id="customermongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongo" ref="mongo" />
+        <constructor-arg name="databaseName" value="chomi_ussd2" />
+    </bean>
+    
+    <!-- MongoTemplate for connecting and quering the documents in the database -->
+    <bean id="ussdSessionMongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongo" ref="mongo" />
+        <constructor-arg name="databaseName" value="chomi_ussd2" />
+    </bean>
+    
+    <!-- MongoTemplate for connecting and quering the documents in the database -->
+    <bean id="personMongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongo" ref="mongo" />
+        <constructor-arg name="databaseName" value="chomi_ussd2" />
+    </bean>
+    
+    <!-- MongoTemplate for connecting and quering the documents in the database -->
+    <bean id="postMongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongo" ref="mongo" />
+        <constructor-arg name="databaseName" value="chomi_ussd2" />
+    </bean>
+    
+    <!-- MongoTemplate for connecting and quering the documents in the database -->
+    <bean id="commentMongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongo" ref="mongo" />
+        <constructor-arg name="databaseName" value="chomi_ussd2" />
+    </bean>
+    
+    <!-- MongoTemplate for connecting and quering the documents in the database -->
+    <bean id="requestMongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongo" ref="mongo" />
+        <constructor-arg name="databaseName" value="chomi_ussd2" />
+    </bean>
+    
+    <!-- MongoTemplate for connecting and quering the documents in the database -->
+    <bean id="messageMongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongo" ref="mongo" />
+        <constructor-arg name="databaseName" value="chomi_ussd2" />
+    </bean>
+    
+    <!-- MongoTemplate for connecting and quering the documents in the database -->
+    <bean id="trendingMongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongo" ref="mongo" />
+        <constructor-arg name="databaseName" value="chomi_ussd2" />
+    </bean>
+    
+    <!-- MongoTemplate for connecting and quering the documents in the database -->
+    <bean id="conversationMongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongo" ref="mongo" />
+        <constructor-arg name="databaseName" value="chomi_ussd2" />
+    </bean>
+    
+    <!-- MongoTemplate for connecting and quering the documents in the database -->
+    <bean id="conversationReplyMongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongo" ref="mongo" />
+        <constructor-arg name="databaseName" value="chomi_ussd2" />
+    </bean>
+    
+    <!-- MongoTemplate for connecting and quering the documents in the database -->
+    <bean id="uSSDActivityServiceMongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongo" ref="mongo" />
+        <constructor-arg name="databaseName" value="chomi_ussd2" />
+    </bean>
+    
+    <bean id="customerService" class="com.ian.service.impl.CustomerServiceImpl">
+        <!-- 		<property name="customermongoTemplate" ref="mongoTemplate" />
+        -->
+    </bean>
+    
+    <bean id="ussdSessionService" class="com.ian.service.impl.UssdSessionServiceImpl">
+        <!-- 		<property name="customermongoTemplate" ref="mongoTemplate" />
+        -->
+    </bean>
+    
+    <bean id="personService" class="com.ian.service.impl.PersonServiceImpl">
+        <!-- 		<property name="customermongoTemplate" ref="mongoTemplate" />
+        -->
+    </bean>
+    
+    <bean id="postService" class="com.ian.service.impl.PostServiceImpl">
+        <!-- 		<property name="customermongoTemplate" ref="mongoTemplate" />
+        -->
+    </bean>
+    
+    <bean id="commentService" class="com.ian.service.impl.CommentServiceImpl">
+        <!-- 		<property name="customermongoTemplate" ref="mongoTemplate" />
+        -->
+    </bean>
+    
+    <bean id="requestService" class="com.ian.service.impl.RequestServiceImpl">
+        <!-- 		<property name="customermongoTemplate" ref="mongoTemplate" />
+        -->
+    </bean>
+    
+    <bean id="messageService" class="com.ian.service.impl.MessageServiceImpl">
+        <!-- 		<property name="customermongoTemplate" ref="mongoTemplate" />
+        -->
+    </bean>
+    
+    <bean id="trendingService" class="com.ian.service.impl.TrendingServiceImpl">
+        <!-- 		<property name="customermongoTemplate" ref="mongoTemplate" />
+        -->
+    </bean>
+    
+    <bean id="conversationService" class="com.ian.service.impl.ConversationServiceImpl">
+        <!-- 		<property name="customermongoTemplate" ref="mongoTemplate" />
+        -->
+    </bean>
+    
+    <bean id="conversationReplyService" class="com.ian.service.impl.ConversationReplyServiceImpl">
+        <!-- 		<property name="customermongoTemplate" ref="mongoTemplate" />
+        -->
+    </bean>
+    
+    <bean id="uSSDActivityService" class="com.ian.service.impl.USSDActivityServiceImpl">
+    </bean>
+    
+    <!--This configuration is for the Locale and the engish properties file -->
+    <bean id="localeResolver"
+          class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+        <property name="defaultLocale" value="en" />
+    </bean>
+
+    <bean id="localeChangeInterceptor"
+          class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="language" />
+    </bean>
+	
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" >
+        <property name="interceptors">
+            <list>
+                <ref bean="localeChangeInterceptor" />
+            </list>
+        </property>
+    </bean>
+    
+    <!-- Register the welcome.properties -->
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="english" />
+    </bean>
+    
+    <context:property-placeholder location="classpath:appsettings.properties" />
+
+</beans>
