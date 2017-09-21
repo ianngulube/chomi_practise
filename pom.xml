@@ -136,14 +136,14 @@
     <build>
         <finalName>${my.buildname}</finalName>
         <plugins>
-            <!--<plugin>
+            <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.5.1</version>
                 <configuration>
                     <source>7</source>
                     <target>7</target>
                 </configuration>
-            </plugin>-->
+            </plugin>
             
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
